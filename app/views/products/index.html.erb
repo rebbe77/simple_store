@@ -34,4 +34,13 @@
 </br>
   <%end%>
 </p>
+<p>
+  <%= "The total number of unique products in DB: #{@products.select(:title).distinct.count}" %>
+</p>
+<p>
+  <%= "The average price of products in DB: $#{@products.average(:price).round(2)}" %>
+</p>
+<p>
+  <%= "The quantity of stock summed over all items: #{@products.sum(:stock_quantity)}" %>
+</p>
 <br>
